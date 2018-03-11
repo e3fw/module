@@ -1,0 +1,5 @@
+local:
+  mongo:
+    port: 9671
+server:
+  port: 9670

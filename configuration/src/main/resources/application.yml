@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/e3fw/config-server-demo
+          force-pull: true
+          # The git repo will be cloned to this directory
+          basedir: configuration/target/config
+          # within the cloned git repo search for properties in this directory
+          searchPaths: properties-git
+        native:
+          searchLocations: file:../properties-local
+
+# Activate this using -Dspring.profiles.active=native
+#  profiles:
+#    active: native
